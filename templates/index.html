@@ -1,0 +1,75 @@
+{% include "header.html" %}
+
+{% block body %}
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+ 
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"></a>
+		<button class="navbar-toggler" type="button" dat-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="pages/about.html">About</a>
+                   
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="pages/service.html">Services</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Team</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="pages/contact.html">Connect</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+    <div class="container">
+        <h1 class="text-center" style="font-size: 9vh">TEXT EXTRACTION FROM IMAGE<span style="font-size: 3vh;"></span></h1>
+        <hr>
+
+        <h1>Description:</h1>
+        <h3>This website can extract all the text saved into an image using Optical Character Recognition (OCR)</h3>
+
+        <hr>
+        <br><br>
+        <h2>Scan your own image!</h2>
+
+        <div class="text-center">
+            <form action="scanner" method=post enctype=multipart/form-data>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                               aria-describedby="inputGroupFileAddon01" accept="image/*">
+                        <label class="custom-file-label" for="inputGroupFile01" width: 130px;>Choose file</label>
+                    </div>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-raised btn-primary">Scan Image</button>
+            </form>
+        </div>
+    </div>
+
+<!--
+    <form action="scanner" method=post enctype=multipart/form-data>
+        <input type="file" name="file">
+        <input type="submit" value="Scan file">
+    </form>
+    <hr>
+-->
+
+{% if scanned %}
+    <hr>
+    <h1>Scanned results</h1>
+{% endif %}
+{% endblock body %}
+
+{% include "footer.html" %}

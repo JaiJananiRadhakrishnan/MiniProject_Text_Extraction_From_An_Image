@@ -1,0 +1,20 @@
+{% include "header.html" %}
+
+{% block body %}
+
+    <div class="container">
+        <br>
+        <br>
+        <h1 class="text-center" style="font-size: 9vh">Results<span style="font-size: 3vh;"></span></h1>
+        <hr>
+        <h2 style="font-size: 7vh">Information</h2>
+        <p style="font-size:160%;"> Words: {{ words }}</p>
+        <p style="font-size:160%;">Scan time: {{ time }} seconds</p>
+        <hr>
+
+        <h2 style="font-size: 7vh">Extracted text</h2>
+        <p style="font-size:160%;">"{{ text }}"</p>
+    </div>
+{% endblock body %}
+
+{% include "footer.html" %}
